@@ -42,7 +42,7 @@ function PopularMovies({ baseUrl, apiKey }) {
             <MovieCard 
             key={movie.id}
              movie={movie}
-             width="170px"
+             width="185px"
              height="250px"
              radius="16px"
              cardStyles="popular-card"
