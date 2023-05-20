@@ -1,0 +1,24 @@
+
+
+.top-rated-container h3 {
+  color: white;
+  margin-top: 30px;
+  text-align: center;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+.top-rated-cards-wrapper{
+    box-shadow: 1px 1px 10px rgba(118, 118, 118, 0.5);
+    padding: 10px 25px;
+    height: 1760px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.top-rated-card {
+    padding: 10px;
+    font-size: 0.75rem;
+    margin: 0 auto;
+    cursor: pointer;
+    color: var(--white);
+  }

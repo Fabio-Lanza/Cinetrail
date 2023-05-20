@@ -1,0 +1,66 @@
+.popular-card {
+  cursor: pointer;
+  margin: 20px;
+}
+
+.movie-info-top {
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  padding: 15px;
+  color: var(--red);
+}
+
+.movie-info-bottom {
+  visibility: hidden;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--transparent-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.movie-info-bottom p:nth-child(1) {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: var(--green);
+}
+
+.movie-info-bottom p:nth-child(2) {
+  color: var(--green-hover);
+  font-size: 14px;
+}
+
+.movie-info-bottom span {
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.popular-card:hover .movie-info-top {
+  visibility: visible;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+.popular-card:hover .movie-info-bottom {
+  visibility: visible;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.top-rated-title {
+  margin-top: 8px;
+}

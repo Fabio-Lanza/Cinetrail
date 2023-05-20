@@ -3,6 +3,8 @@
 
 :root{
   --red: #e50916;
+  --green:#f7d354;
+  --green-hover:#b8930c;
   --white:#fff; 
   --black:#000; 
   --header-height:70px;
