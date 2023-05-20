@@ -70,7 +70,7 @@
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
   .slider-overlay {
-    height: 465px;
+    height: 420px;
   }
   
   .left-arrow,

@@ -45,6 +45,12 @@
     margin-left: 1px;
   }
 
+  .popular-title {
+    color: white;
+   margin: 30px 0 20px 20px;
+   color: var(--green);
+  }
+
   .page-numbers {
    font-size: 13px;
     display: flex;

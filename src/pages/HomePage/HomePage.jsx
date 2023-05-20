@@ -30,7 +30,9 @@ const [topRatedMovies, setTopRatedMovies] = useState([])
 
         <div className='movies-wrapper'>
           <PopularMovies apiKey={apiKey} baseUrl={baseUrl}/>
-          <TopRatedMovies topRatedMovies={topRatedMovies}/>
+          <TopRatedMovies 
+          topRatedMovies={topRatedMovies} 
+          className='topRated-mobile'/>
         </div>
     </div>
   )

@@ -1,21 +1,24 @@
-.homepage-container{
-    margin-top: 80px;
+.homepage-container {
+  margin-top: 80px;
 }
 
-.movies-wrapper{
- display: flex;
- padding: 0 60px;  
+.movies-wrapper {
+  display: flex;
+  padding: 0 60px;
 }
 
 /* ---media query Laptop */
 @media screen and (max-width: 1445px) {
 }
 
-
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
-    .movies-wrapper{
-        display: flex;
-        padding: 0 5px;  
-       }
+  .movies-wrapper {
+    display: flex;
+    padding: 0 5px;
+  }
+
+  .topRated-mobile{
+    display: none;
+  }
 }
