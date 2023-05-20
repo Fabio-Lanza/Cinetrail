@@ -24,8 +24,7 @@ function PopularMovies({ baseUrl, apiKey }) {
     <div className="popular-container">
       <h3 className="popular-title">Popular Movies</h3>
       <div className="popular-cards-wrapper">
-        {popularMovie.map((movie) => (
-          
+        {popularMovie.map((movie) => (  
             <MovieCard 
             key={movie.id}
              movie={movie}
@@ -35,9 +34,23 @@ function PopularMovies({ baseUrl, apiKey }) {
              cardStyles="popular-card"
              imgUrl={movie.poster_path}
              moveId={movie.id}/>
-          
         ))}
       </div>
+      {/* --- Mobile */}
+      <div className="popular-movies-mobile">
+      {popularMovie.map((movie) => (  
+            <MovieCard 
+            key={movie.id}
+             movie={movie}
+             width="170px"
+             height="250px"
+             radius="16px"
+             cardStyles="popular-card"
+             imgUrl={movie.poster_path}
+             moveId={movie.id}/>
+        ))}
+      </div>
+      
       <div className="page-numbers">
         Select Page:
         {pageNumbers.map((number) => (
@@ -47,6 +60,7 @@ function PopularMovies({ baseUrl, apiKey }) {
         ))}
       </div>
     </div>
+    
   );
 }
 

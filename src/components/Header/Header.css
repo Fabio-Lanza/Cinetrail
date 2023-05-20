@@ -79,9 +79,8 @@
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
   .header-container {
-    width: 50%;
+    width: 60%;
     padding: 0 20px;
-
   }
 
   .header-light {
@@ -98,7 +97,14 @@
 
   /* -- Toggle btn --- */
   .header-buttons-container {
-    gap: 60px;
+    gap: 40px;
+    width: 280px;
+  }
+
+  .create-account-btn {
+    width: 120px;
+    padding: 8px 12px;
+   
   }
 
 }

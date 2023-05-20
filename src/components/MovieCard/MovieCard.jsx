@@ -35,7 +35,7 @@ function MovieCard({
 
   return (
     <Link to={hyperRef} className={cardStyles}>
-    <div style={imageStyle} className='mobile'>
+    <div style={imageStyle}>
       <div className="movie-info-top">
       <StarRatings
             rating={movie?.vote_average / 2}
