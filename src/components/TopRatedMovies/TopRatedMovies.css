@@ -22,3 +22,10 @@
     cursor: pointer;
     color: var(--white);
   }
+
+  /* ---media query Mobile */
+@media screen and (max-width: 480px){
+  .top-rated-container{
+    display: none;
+  }
+}
