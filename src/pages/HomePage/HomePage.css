@@ -4,6 +4,18 @@
 
 .movies-wrapper{
  display: flex;
- padding: 0 60px;
-    
+ padding: 0 60px;  
+}
+
+/* ---media query Laptop */
+@media screen and (max-width: 1445px) {
+}
+
+
+/* ---media query Mobile */
+@media screen and (max-width: 480px) {
+    .movies-wrapper{
+        display: flex;
+        padding: 0 5px;  
+       }
 }

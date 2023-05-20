@@ -15,7 +15,7 @@
   background-color: var(--white);
 }
 
-.logo img{
+.logo img {
   width: 110px;
   margin-left: 30px;
   margin-top: 10px;
@@ -69,4 +69,36 @@
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 8px;
+}
+
+/* ---media query Laptop */
+@media screen and (max-width: 1445px) {
+}
+
+
+/* ---media query Mobile */
+@media screen and (max-width: 480px) {
+  .header-container {
+    width: 50%;
+    padding: 0 20px;
+
+  }
+
+  .header-light {
+    background-color: var(--white);
+  }
+
+  .logo img {
+    margin-left: -20px;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  /* -- Toggle btn --- */
+  .header-buttons-container {
+    gap: 60px;
+  }
+
 }

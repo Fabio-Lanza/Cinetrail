@@ -23,3 +23,14 @@
     gap: 30px;
     cursor: pointer;
 }
+
+/* ---media query Laptop */
+@media screen and (max-width: 1445px) {
+}
+
+
+/* ---media query Mobile */
+@media screen and (max-width: 480px){
+    
+}
+    
