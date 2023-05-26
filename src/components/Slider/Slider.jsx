@@ -9,7 +9,8 @@ import Genres from "../Genres/Genres";
 function SliderBanner({ apiKey, baseUrl }) {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [index, setIndex] = useState(0);
-  const baseImgUrl = "https://image.tmdb.org/t/p/original";
+  const baseImgUrl = import.meta.env.VITE_IMAGE_URL;
+   
 
   useEffect(() => {
     axios.get(`${baseUrl}/movie/upcoming?api_key=${apiKey}`).then((res) => {

@@ -19,7 +19,7 @@ function TopRatedMovies({ topRatedMovies }) {
             imgUrl={movie.backdrop_path}
             movieId={movie?.id}
           />
-           )).slice(10)} 
+           )).slice(0, 9)} 
         </div>.
     </div>
   )

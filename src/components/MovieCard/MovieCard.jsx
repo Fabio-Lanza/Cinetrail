@@ -30,7 +30,7 @@ function MovieCard({
         : null,
   };
 
-  const hyperRef = `/movieDetails/${movieId}`
+  const hyperRef = `/movieDetails/${movieId}`;
 
 
   return (

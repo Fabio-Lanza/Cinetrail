@@ -7,7 +7,7 @@ function PopularMovies({ baseUrl, apiKey }) {
   const [popularMovie, setPopularMovie] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const pageNumbers = [1, 2, 3, 4, 5, 6];
 
   useEffect(() => {
     axios
@@ -52,7 +52,7 @@ function PopularMovies({ baseUrl, apiKey }) {
       </div>
       
       <div className="page-numbers">
-        Select Page:
+        Next Page
         {pageNumbers.map((number) => (
           <p key={number} onClick={() => setCurrentPage(number)}>
             {number}
