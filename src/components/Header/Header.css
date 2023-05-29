@@ -98,9 +98,9 @@
 
   /* -- Toggle btn --- */
   .header-buttons-container {
-    gap: 40px;
+    gap: 30px;
     width: 900px;
-    margin-left: 30px;
+    margin-left: 70px;
   }
 
   .create-account-btn {
