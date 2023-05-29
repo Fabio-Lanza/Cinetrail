@@ -56,6 +56,7 @@ function MovieDetails({ baseUrl, apiKey }) {
 
   }, [moveid]);
 
+  
   return (
     <div className="movie-details-container">
       {/* <div className={`header-container ${!darkMode && "header-light"}`}> */}
