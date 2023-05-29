@@ -30,7 +30,7 @@
 }
 
 .content {
-  color: #fff;
+  color: var(--grey-text);
   width: 1000px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -84,7 +84,7 @@
       }
       
       .content {
-        color: #fff;
+        color: #ccc;
         width: 400px;
         font-weight: 300;
         letter-spacing: 1px;

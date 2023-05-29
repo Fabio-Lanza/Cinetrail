@@ -56,6 +56,7 @@ function MovieDetails({ baseUrl, apiKey }) {
 
   return (
     <>
+     <div className={darkMode ?"movie-details-container" : "movie-details-container details-light"}>
       <div className="movie-details-container">
         {videoLink ? (
           <div className="trailer-container">
@@ -134,6 +135,7 @@ function MovieDetails({ baseUrl, apiKey }) {
             </p>
           )}
         </div>
+      </div>
       </div>
     </>
   );
