@@ -16,7 +16,7 @@ function Review({ review }) {
           src={
             imageError
               ? avatar
-              : `https://image.tmdb.org/t/p/w500/${review?.author_details.author_path}`
+              : `https://image.tmdb.org/t/p/w500/${review?.author_details.avatar_path}`
           }
           onError={() => setImageError(true)}
         />
