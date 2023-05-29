@@ -3,8 +3,8 @@ import "./Slider.css";
 import axios from "axios";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import StarRatings from "react-star-ratings";
 import Genres from "../Genres/Genres";
+import Rating from "../Rating/Rating";
 
 function SliderBanner({ apiKey, baseUrl }) {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -59,12 +59,8 @@ function SliderBanner({ apiKey, baseUrl }) {
             genreIds={upcomingMovies[index]?.genre_ids}
           />
 
-          <StarRatings
-            rating={upcomingMovies[index]?.vote_average}
-            starRatedColor="red"
-            numberOfStars={5}
-            starDimension="15px"
-            starSpacing="1px"
+          <Rating
+            movieRating={upcomingMovies[index]?.vote_average}
           />
         </div>
       </div>

@@ -33,7 +33,7 @@ function PopularMovies({ baseUrl, apiKey }) {
              radius="16px"
              cardStyles="popular-card"
              imgUrl={movie.poster_path}
-             moveId={movie.id}/>
+             movieId={movie?.id}/>
         ))}
       </div>
       {/* --- Mobile */}
@@ -47,7 +47,7 @@ function PopularMovies({ baseUrl, apiKey }) {
              radius="16px"
              cardStyles="popular-card"
              imgUrl={movie.poster_path}
-             moveId={movie.id}/>
+             moveId={movie?.id}/>
         ))}
       </div>
       
