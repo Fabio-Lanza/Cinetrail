@@ -62,15 +62,15 @@
   margin-left: 50px;
 }
 
-.movie-info h2:nth-child(1){
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 300;
-    color: #fff;
-    line-height: 35px;
-  }
+.movie-info h2:nth-child(1) {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 35px;
+}
 
-.movie-info h2:nth-child(2){
+.movie-info h2:nth-child(2) {
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 300;
@@ -78,39 +78,37 @@
   line-height: 35px;
 }
 
-.movie-info h4{
-    color: #fff;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
+.movie-info h4 {
+  color: #fff;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
 }
 
-.movie-info span{
-    color: var(--green);
-    font-weight: 400;
+.movie-info span {
+  color: var(--green);
+  font-weight: 400;
 }
 
 /* ---Reviews */
 .reviews-title {
-    border-bottom: solid 2px gray;
-    padding-bottom: 10px;
-    font-size: 1.6rem;
-    margin-left: 30px;
-    color: var(--green);
-    letter-spacing: 2px;
-  }
+  border-bottom: solid 2px gray;
+  padding-bottom: 10px;
+  font-size: 1.6rem;
+  margin-left: 30px;
+  color: var(--green);
+  letter-spacing: 2px;
+}
 
-  .review-number {
-    margin-top: 10px;
-    cursor: pointer;
-    color: gray;
-  }
+.review-number {
+  margin-top: 10px;
+  cursor: pointer;
+  color: gray;
+}
 
-  .review-container {
-    margin-top: 60px;
-    padding: 20px 0;
-  }
-  
-
+.review-container {
+  margin-top: 60px;
+  padding: 20px 0;
+}
 
 /* .details-container {
   color: var(--white);
@@ -133,68 +131,44 @@
 
 
 
-
-@media (max-width: 768px) {
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .movie-info {
-    margin-top: 20px;
-  }
-  .movie-info h2,
-  .movie-info h3,
-  .movie-info h4 {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 428px) {
   .movie-details-container {
     margin-top: var(--header-height-mobile);
   }
 
   /* ---Trailer */
-.trailer-container {
+  .trailer-container {
     width: 100%;
     height: 700px;
   }
 
-  
-/* --Bottom content */ 
+  /* --Bottom content */
   .title-container h1 {
     font-weight: 400;
     font-size: 28px;
     margin: 60px 30px;
     color: var(--green);
   }
-  
+
   .details-poster {
     margin: 0 auto;
   }
-  
-  .movie-info-container{
+
+  .movie-info-container {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .movie-info {
     width: 85%;
     flex-direction: column;
     margin: 0px auto;
     text-align: center;
   }
-  
-  .movie-info h4{
-      color: #fff;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
+
+  .movie-info h4 {
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
   }
-  
-
-  
-
-
-
 }
