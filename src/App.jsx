@@ -9,8 +9,10 @@ import MovieDetails from "./pages/MovieDetails/MovieDetails";
 
 function App() {
 
-  const apiKey = import.meta.env.VITE_API_KEY; 
-  const baseUrl = import.meta.env.VITE_BASE_URL; 
+  // const apiKey = import.meta.env.VITE_API_KEY; 
+  // const baseUrl = import.meta.env.VITE_BASE_URL; 
+  const apiKey = '477f5f5debaf48768ed55d725362b931'; 
+  const baseUrl = 'https://api.themoviedb.org/3'; 
   
 
   return (
