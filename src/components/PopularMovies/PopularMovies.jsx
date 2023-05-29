@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "./PopularMovies.css";
 import MovieCard from '../MovieCard/MovieCard'
+import { ThemeContext } from "../../Context/ThemeContext";
 
 function PopularMovies({ baseUrl, apiKey }) {
   const [popularMovie, setPopularMovie] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const {darkMode, setDarkMode} = useContext(ThemeContext)
 
   const pageNumbers = [1, 2, 3, 4, 5, 6];
 
@@ -21,6 +23,7 @@ function PopularMovies({ baseUrl, apiKey }) {
   }, [currentPage]);
 
   return (
+    
     <div className="popular-container">
       <h3 className="popular-title">Popular Movies</h3>
       <div className="popular-cards-wrapper">
@@ -60,6 +63,7 @@ function PopularMovies({ baseUrl, apiKey }) {
         ))}
       </div>
     </div>
+  
     
   );
 }

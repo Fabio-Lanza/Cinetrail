@@ -20,9 +20,10 @@ function SliderBanner({ apiKey, baseUrl }) {
 
   const sliderStyle = {
     backgroundImage: `url(${baseImgUrl}${upcomingMovies[index]?.backdrop_path})`,
-    height: "55vh",
+    height: "60vh",
     backgroundSize: "cover",
-    backgroundPosition: "center", 
+    backgroundPosition: "center",
+    objectFit: "cover",
   };
 
 

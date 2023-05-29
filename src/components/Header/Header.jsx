@@ -14,7 +14,7 @@ function Header() {
   }
 
   return (
-    <header className={`header-container ${!darkMode && "header-light"}`}>
+    <header className={darkMode ?"header-container":"header-container header-light" }>
       <Link to="/" className="logo">
         <img src={MovieLogo} alt="" />
       </Link>
