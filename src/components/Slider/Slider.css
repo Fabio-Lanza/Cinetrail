@@ -1,7 +1,7 @@
 .slider-overlay {
   background: #000;
   background: linear-gradient(90deg, #000, hsla(0, 0%, 100%, 0));
-  height: 548px;
+  height: 580px;
   position: absolute;
   width: 100%;
 }
@@ -73,7 +73,7 @@
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
   .slider-overlay {
-    height: 509px;
+    height: 513px;
   }
   
   .left-arrow,

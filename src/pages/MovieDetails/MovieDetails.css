@@ -134,9 +134,10 @@
 
 
 
-@media (max-width: 428px){
+@media screen and (max-width: 428px){
   .movie-details-container{
     margin-top: var(--header-height-mobile);
+    min-height: 85vh;
   }
 
   .trailer-container {
@@ -153,7 +154,7 @@
   }
 
   .details-poster {
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .movie-info-container {
