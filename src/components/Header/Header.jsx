@@ -17,12 +17,13 @@ function Header({ baseUrl, apiKey }) {
     localStorage.setItem("darkMode", JSON.stringify(!darkMode));
   };
 
+  console.log(searchResults)
+
   useEffect(() => {
     if (query.trim().length > 0) {
       axios
         .get(`${baseUrl}/search/movie?api_key=${apiKey}&query=${query}`)
         .then((res) => {
-          console.log(res.data.results)
           setSearchResults(res.data.results);
         })
         .catch((err) => console.log(err));
@@ -45,7 +46,7 @@ function Header({ baseUrl, apiKey }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search Movies..."
-          className="search-input"
+          className={`search-input ${query && "input-active"} ${!query && !darkMode && "input-light"}`}
         />
 
         {query.trim() !== "" && (

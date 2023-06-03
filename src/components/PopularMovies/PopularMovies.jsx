@@ -31,26 +31,12 @@ function PopularMovies({ baseUrl, apiKey }) {
             <MovieCard 
             key={movie.id}
              movie={movie}
-             width="230px"
-             height="350px"
+             width="187px"
+             height="330px"
              radius="16px"
              cardStyles="popular-card"
              imgUrl={movie.poster_path}
              movieId={movie?.id}/>
-        ))}
-      </div>
-      {/* --- Mobile */}
-      <div className="popular-movies-mobile">
-      {popularMovie.map((movie) => (  
-            <MovieCard 
-            key={movie.id}
-             movie={movie}
-             width="185px"
-             height="250px"
-             radius="16px"
-             cardStyles="popular-card"
-             imgUrl={movie.poster_path}
-             moveId={movie?.id}/>
         ))}
       </div>
       

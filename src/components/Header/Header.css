@@ -81,26 +81,6 @@ color:var(--white);
   overflow: scroll;
 }
 
-/* .search-results-item{
-  background-color: var(--dark-bg);
-  color:var(--white);
-  height:50px;
-  margin-bottom:2px;
-  display: flex;
-  justify-content: space-between;
-  padding-right:10px;
-  cursor:pointer;
-}
-.search-results-item:hover{
-  border:solid 1px gray;
-} */
-
-/* .result-img{
-  height:50px;
-  width:80px;
-} */
-
-
 
 /* -- Toggle btn --- */
 .header-buttons-container {

@@ -23,7 +23,7 @@ function SliderBanner({ apiKey, baseUrl }) {
     height: "60vh",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    objectFit: "cover",
+    backgroundRepeat:"no-repeat",
   };
 
 
