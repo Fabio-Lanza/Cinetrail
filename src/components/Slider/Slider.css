@@ -63,9 +63,9 @@
 
 
 /* ---media query Laptop */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1505px) {
   .slider-overlay {
-    height: 768px;
+    height: 558px;
   }
 }
 
