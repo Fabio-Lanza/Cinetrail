@@ -1,12 +1,12 @@
 import ThemeContextProvider from "./ThemeContext";
-import UserContextProvider from "./UserContext";
+import UserDataContextProvider from "./UserDataContext";
 
 export default function CombinedContextProvider({ children }) {
   return (
     <ThemeContextProvider>
-      <UserContextProvider>
+      <UserDataContextProvider>
         {children}
-        </UserContextProvider>
+        </UserDataContextProvider>
     </ThemeContextProvider>
   );
 }

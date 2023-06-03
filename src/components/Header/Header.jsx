@@ -6,20 +6,29 @@ import { useContext, useEffect, useState } from "react";
 import MovieLogo from "../../assets/MovieLogo.png";
 import axios from "axios";
 import SearchResults from "../SearchResults/SearchResults";
-import { UserContext } from "../../Context/UserContext";
+import { UserDataContext } from "../../Context/UserDataContext";
+
 
 function Header({ baseUrl, apiKey }) {
   const navigate = useNavigate();
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const { user, token } = useContext(UserContext);
+  const { user, token, setToken } = useContext(UserDataContext);
+  const [profileOptions,setProfileOptions]=useState(false)
+
 
   const handleTheme = () => {
     setDarkMode(!darkMode);
     localStorage.setItem("darkMode", JSON.stringify(!darkMode));
   };
 
+  const handleLogout=()=>{
+    localStorage.clear()
+    setToken('')
+    navigate('/') 
+ } 
+  
 
   useEffect(() => {
     if (query.trim().length > 0) {
@@ -85,18 +94,42 @@ function Header({ baseUrl, apiKey }) {
             <MdOutlineDarkMode className="theme-icon " onClick={handleTheme} />
           </div>
         )}
-       </div>  
-       
-        {token ? (
-          <p>Welcome {user.username}</p>
-        ) : (
-          <div>
-            <button 
+      </div>
+
+      {token ? (
+        <div
+          className={
+            darkMode ? "profile-container" : "profile-container profile-light"
+          }
+        >
+          <img
+            src={user.image_url}
+            className="profile-img"
+            onClick={() => setProfileOptions(!profileOptions)}
+          />
+          <p>
+            Welcome <span>{user.username}</span>
+          </p>
+
+          {profileOptions ? (
+            <div className="profile-options">
+              <Link to="/myfavorites">My Favorites</Link>
+              <p className="logout" onClick={handleLogout}>
+                Logout
+              </p>
+            </div>
+          ) : null}
+        </div>
+      ) : (
+        <div>
+          <button
             className="create-account-btn"
-            onClick={()=> navigate('/signup')}>Create Account</button>
-          </div>
-        )}
-      
+            onClick={() => navigate("/signup")}
+          >
+            Create Account
+          </button>
+        </div>
+      )}
     </header>
   );
 }

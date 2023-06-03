@@ -13,7 +13,7 @@
 }
 
 .header-light {
-  background-color: var(--white);
+  background-color: var(--light-bg);
 }
 
 .logo img {
@@ -119,6 +119,68 @@ color:var(--white);
   border-radius: 8px;
 }
 
+
+/* ---Profile */
+.profile-container{
+  color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+.profile-light{
+    color:black;
+}
+
+.profile-container span{
+  color: var(--green);
+}
+.profile-img{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    cursor:pointer;
+    margin-bottom: 5px;
+}
+.profile-options{
+    position: absolute;
+    top:var(--header-height);
+    right:20;
+    width:130px;
+    background-color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.profile-options a{
+    color:var(--white);
+    cursor:pointer;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.logout{
+color:var(--red);
+font-size: 1.2rem;
+cursor:pointer;
+margin-top: 15px;
+}
+
+@keyframes input {
+0% {
+opacity: 0;
+transform: translateY(-10px);
+}
+
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
 /* ---media query Laptop */
 @media screen and (max-width: 1445px) {
 }
@@ -154,5 +216,25 @@ color:var(--white);
     padding: 8px 12px;
    
   }
+  
+/* ---Profile */
+.profile-container{
+  margin-right:10px;
+}
+
+.profile-container p{
+  font-size: 13px;
+  text-align: center;
+}
+
+.profile-img{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    cursor:pointer;
+    margin-bottom: 5px;
+}
+
+
 
 }

@@ -2,11 +2,11 @@ import { useState, useEffect, useContext, CSSProperties } from "react";
 import "./SignUp.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
 import { ThemeContext } from "./../../Context/ThemeContext";
+import { UserDataContext } from "../../Context/UserDataContext";
 
 function SignUp({ serverUrl }) {
-  const { token } = useContext(UserContext);
+  const { token } = useContext(UserDataContext);
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

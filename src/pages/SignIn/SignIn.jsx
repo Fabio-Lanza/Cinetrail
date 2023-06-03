@@ -2,15 +2,15 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./SignIn.css";
-import { UserContext } from "../../context/UserContext";
 import { ThemeContext } from "./../../Context/ThemeContext";
+import { UserDataContext } from "../../Context/UserDataContext";
 
 function SignIn({ serverUrl }) {
   const navigate = useNavigate();
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setUser, token, setToken} = useContext(UserContext)
+  const {setUser, token, setToken} = useContext(UserDataContext)
 
   const handleSignIn = (e) => {
     e.preventDefault();

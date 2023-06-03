@@ -1,8 +1,8 @@
 import { useState, useEffect, createContext } from 'react';
 
-export const UserContext= createContext({})
+export const UserDataContext= createContext()
 
-export default function UserContextProvider(props){
+export default function UserDataContextProvider(props){
     const [user, setUser]=useState('');
     const [token, setToken]=useState('');
 
@@ -19,8 +19,8 @@ export default function UserContextProvider(props){
    
 
     return (
-        <UserContext.Provider value={{user,setUser,token,setToken}}>
+        <UserDataContext.Provider value={{user,setUser,token,setToken}}>
             {props.children}
-        </UserContext.Provider>
+        </UserDataContext.Provider>
       )
 }
