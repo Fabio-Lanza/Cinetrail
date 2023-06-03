@@ -1,23 +1,25 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { useContext, useEffect, useState } from "react";
 import MovieLogo from "../../assets/MovieLogo.png";
 import axios from "axios";
 import SearchResults from "../SearchResults/SearchResults";
+import { UserContext } from "../../Context/UserContext";
 
 function Header({ baseUrl, apiKey }) {
+  const navigate = useNavigate();
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const { user, token } = useContext(UserContext);
 
   const handleTheme = () => {
     setDarkMode(!darkMode);
     localStorage.setItem("darkMode", JSON.stringify(!darkMode));
   };
 
-  console.log(searchResults)
 
   useEffect(() => {
     if (query.trim().length > 0) {
@@ -29,7 +31,6 @@ function Header({ baseUrl, apiKey }) {
         .catch((err) => console.log(err));
     }
   }, [query]);
-
 
   return (
     <header
@@ -46,7 +47,9 @@ function Header({ baseUrl, apiKey }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search Movies..."
-          className={`search-input ${query && "input-active"} ${!query && !darkMode && "input-light"}`}
+          className={`search-input ${query && "input-active"} ${
+            !query && !darkMode && "input-light"
+          }`}
         />
 
         {query.trim() !== "" && (
@@ -61,7 +64,7 @@ function Header({ baseUrl, apiKey }) {
               );
             })}
           </div>
-        )} 
+        )}
       </div>
 
       <div className="header-buttons-container">
@@ -82,9 +85,18 @@ function Header({ baseUrl, apiKey }) {
             <MdOutlineDarkMode className="theme-icon " onClick={handleTheme} />
           </div>
         )}
-
-        <button className="create-account-btn">Create Account</button>
-      </div>
+       </div>  
+       
+        {token ? (
+          <p>Welcome {user.username}</p>
+        ) : (
+          <div>
+            <button 
+            className="create-account-btn"
+            onClick={()=> navigate('/signup')}>Create Account</button>
+          </div>
+        )}
+      
     </header>
   );
 }

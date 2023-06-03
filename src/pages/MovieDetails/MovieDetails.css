@@ -134,7 +134,7 @@
 
 
 
-@media screen and (max-width: 428px){
+@media screen and (max-width: 480px){
   .movie-details-container{
     margin-top: var(--header-height-mobile);
     min-height: 85vh;

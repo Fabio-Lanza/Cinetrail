@@ -1,34 +1,28 @@
-import { useState, useEffect, useContext, CSSProperties } from "react";
-import "./SignUp.css";
+import { useState, useEffect, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import "./SignIn.css";
 import { UserContext } from "../../context/UserContext";
 import { ThemeContext } from "./../../Context/ThemeContext";
 
-function SignUp({ serverUrl }) {
-  const { token } = useContext(UserContext);
+function SignIn({ serverUrl }) {
+  const navigate = useNavigate();
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [success, setSuccess] = useState(false);
+  const {setUser, token, setToken} = useContext(UserContext)
 
-  const handleSignUp = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
     axios
-      .post(`${serverUrl}users/signUp`, { email, password, username })
+      .post(`${serverUrl}users/login`, { email, password })
       .then((res) => {
         console.log(res.data);
-        if (res.data.status === 409) {
-          alert(
-            "There is another user with this email. Please sign in with a different email."
-          );
-        } else {
-          setSuccess(true);
-          setPassword("");
-          setEmail("");
-          setUsername("");
-        }
+        setUser(res.data)
+        setToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("userInfo", JSON.stringify(res.data));
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
@@ -42,10 +36,10 @@ function SignUp({ serverUrl }) {
       {token ? (
         <p>You are already loggedin.</p>
       ) : (
-        <form className="signup-form" onSubmit={handleSignUp}>
+        <form className="signup-form" onSubmit={handleSignIn}>
           <div className="title-container">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
+            <h1>Sign In</h1>
+            <p>Please fill in this form to login.</p>
           </div>
           <div
             className={
@@ -77,42 +71,22 @@ function SignUp({ serverUrl }) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div
-            className={
-              darkMode ? "input-wrapper" : "input-wrapper input-wrapper-light"
-            }
-          >
-            <label htmlFor="username">Username</label>
-            <input
-              value={username}
-              type="text"
-              placeholder="Enter Username"
-              name="username"
-              required
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
           <div className="button-container">
             <button type="reset" className="cancelbtn">
               Cancel
             </button>
             <button type="submit" className="signupbtn">
-              Sign Up
+              Sign In
             </button>
           </div>
-          {success ? (
-            <p className="success-message">
-              Signed up successfully! <Link to="/signin">Signin</Link>
-            </p>
-          ) : (
-            <p className="signin-message">
-              Already have an account? <Link to="/signin">Signin</Link>
-            </p>
-          )}
+
+          <p className="signin-message">
+            Don't have an account? <Link to="/signup">Signup</Link>
+          </p>
         </form>
       )}
     </div>
   );
 }
 
-export default SignUp;
+export default SignIn;
