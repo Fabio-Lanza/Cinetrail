@@ -63,9 +63,15 @@
 
 
 /* ---media query Laptop */
+<<<<<<< HEAD
 @media screen and (max-width: 1600px) and (max-height: 850px){
   .slider-overlay {
     height: 490px;
+=======
+@media screen and (max-width: 1600px) {
+  .slider-overlay {
+    height: 390px;
+>>>>>>> 13bfd63785ebad3264a122d2b0f685bc5dcba7c8
   }
 }
 
