@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<HomePage apiKey={apiKey} baseUrl={baseUrl}/>} />
           <Route path="/signup" element={<SignUp serverUrl={serverUrl}/>} />
           <Route path="/signin" element={<SignIn serverUrl={serverUrl}/>} />
-          <Route path="/movieDetails/:moveid" element={<MovieDetails apiKey={apiKey} baseUrl={baseUrl}/>}/>        
+          <Route path="/movieDetails/:moveid" element={<MovieDetails apiKey={apiKey} baseUrl={baseUrl} serverUrl={serverUrl}/>}/>        
         </Routes>
       </BrowserRouter>
     </CombinedContextProvider>

@@ -8,8 +8,11 @@ import Genres from "../../components/Genres/Genres";
 import { MdReviews } from "react-icons/md";
 import Review from "../../components/Review/Review";
 import Rating from "../../components/Rating/Rating";
+import { UserDataContext } from "../../Context/UserDataContext";
+import { FavoritesContext } from "./../../../../../Rick-and-Morty/rickandmorty/src/context/FavoriteContext";
 
-function MovieDetails({ baseUrl, apiKey }) {
+
+function MovieDetails({ baseUrl, apiKey, serverUrl }) {
   const { moveid } = useParams();
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [videoLink, setVideoLink] = useState("");
@@ -17,6 +20,8 @@ function MovieDetails({ baseUrl, apiKey }) {
   const [reviews, setReviews] = useState([]);
   const [reviewNumber, setReviewNumber] = useState(3);
   const [totalReviews, setTotalReviews] = useState(1);
+  const { user, token } = useContext(UserDataContext);
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     // --Movies
@@ -54,91 +59,87 @@ function MovieDetails({ baseUrl, apiKey }) {
       });
   }, [moveid]);
 
+
   return (
-    <>
-     <div className={darkMode ?"movie-details-container" : "movie-details-container details-light"}>
-      <div className="movie-details-container">
-        {videoLink ? (
-          <div className="trailer-container">
-            <ReactPlayer
-              className="trailer-player"
-              url={`https://www.youtube.com/watch?v=${videoLink}`}
-              width="100%"
-              height="800px"
-            />
-          </div>
-        ) : (
-          <div
-            className="trailer-container-blank"
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <p>No Trailer Released</p>
-          </div>
-        )}
-      </div>
-
-      <div className="movie-container-bottom">
-        <div className="title-container">
-          <h1>{movie?.title}</h1>
-        </div>
-        <div className="movie-info-container">
-          <img
-            src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
-            className="details-poster"
-          />
-
-          <div className="movie-info">
-            <h2>{movie.tagline}</h2>
-            <h2>{movie.overview}</h2>
-            <h4>
-              Status: <span>{movie.status}</span>
-            </h4>
-            <h4>
-              RunTime: <span>{movie.runtime}</span>
-            </h4>
-            <h4>
-              Budget: <span>{movie.budget}</span>
-            </h4>
-
-            {/* <Genres
-              apiKey={apiKey}
-              baseUrl={baseUrl}
-              genreIds={movie?.genres}
-            /> */}
-
-            <Rating movieRating={movie?.vote_average} />
-          </div>
-        </div>
-        {/* </div> */}
-
-        {/* ----Reviews */}
-        <div className="review-container">
-          <h1 className="reviews-title">Reviews</h1>
-          {reviews.slice(0, reviewNumber).map((item) => {
-            return <Review key={item.id} review={item} />;
-          })}
-
-          {reviewNumber >= totalReviews ? (
-            <p className="review-number" onClick={() => setReviewNumber(3)}>
-              <em>End of reviews.Collapse</em>
-            </p>
+    <div>
+      <div className={darkMode ? "movie-details-container" : "movie-details-container details-light"}>
+        <div className="movie-details-container">
+          {videoLink ? (
+            <div className="trailer-container">
+              <ReactPlayer
+                className="trailer-player"
+                url={`https://www.youtube.com/watch?v=${videoLink}`}
+                width="100%"
+                height="800px"
+              />
+            </div>
           ) : (
-            <p
-              className="review-number"
-              onClick={() => setReviewNumber(reviewNumber + 3)}
+            <div
+              className="trailer-container-blank"
+              style={{
+                backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <em>Read more reviews.Collapse</em>
-            </p>
+              <p>No Trailer Released</p>
+            </div>
           )}
         </div>
+
+        <div className="movie-container-bottom">
+          <div className="title-container">
+            <h1>{movie?.title}</h1>
+          </div>
+
+          <div className="movie-info-container">
+            <img
+              src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+              className="details-poster"
+            />
+
+            <div className="movie-info">
+              <h2>{movie.tagline}</h2>
+              <h2>{movie.overview}</h2>
+              <h4>
+                Status: <span>{movie.status}</span>
+              </h4>
+              <h4>
+                RunTime: <span>{movie.runtime}</span>
+              </h4>
+              <h4>
+                Budget: <span>{movie.budget}</span>
+              </h4>
+
+              <Rating movieRating={movie?.vote_average} />
+            </div>
+          </div>
+
+          {/* ----Reviews */}
+          <div className="review-container">
+            <h1 className="reviews-title">Reviews</h1>
+            {reviews.slice(0, reviewNumber).map((item) => {
+              return <Review key={item.id} review={item} />;
+            })}
+
+            {reviewNumber >= totalReviews ? (
+              <p className="review-number" onClick={() => setReviewNumber(3)}>
+                <em>End of reviews.Collapse</em>
+              </p>
+            ) : (
+              <p
+                className="review-number"
+                onClick={() => setReviewNumber(reviewNumber + 3)}
+              >
+                <em>Read more reviews.Collapse</em>
+              </p>
+            )}
+          </div>
+        </div>
       </div>
-      </div>
-    </>
+    </div>
   );
-}
+ }
+
 
 export default MovieDetails;

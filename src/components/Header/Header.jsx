@@ -113,7 +113,6 @@ function Header({ baseUrl, apiKey }) {
 
           {profileOptions ? (
             <div className="profile-options">
-              <Link to="/myfavorites">My Favorites</Link>
               <p className="logout" onClick={handleLogout}>
                 Logout
               </p>
