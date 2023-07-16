@@ -1,7 +1,7 @@
 .slider-overlay {
   background: #000;
   background: linear-gradient(90deg, #000, hsla(0, 0%, 100%, 0));
-  height: 548px;
+  height: 60%;
   position: absolute;
   width: 100%;
 }
@@ -63,15 +63,9 @@
 
 
 /* ---media query Laptop */
-<<<<<<< HEAD
-@media screen and (max-width: 1600px) and (max-height: 850px){
+@media screen and (max-width: 1300px){
   .slider-overlay {
-    height: 490px;
-=======
-@media screen and (max-width: 1600px) {
-  .slider-overlay {
-    height: 390px;
->>>>>>> 13bfd63785ebad3264a122d2b0f685bc5dcba7c8
+    height: 60%;
   }
 }
 
@@ -79,7 +73,7 @@
 /* ---media query Mobile */
 @media screen and (max-width: 480px) {
   .slider-overlay {
-    height: 513px;
+    height: 60%;
   }
   
   .left-arrow,
