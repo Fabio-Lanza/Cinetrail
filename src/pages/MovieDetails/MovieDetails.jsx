@@ -9,7 +9,6 @@ import { MdReviews } from "react-icons/md";
 import Review from "../../components/Review/Review";
 import Rating from "../../components/Rating/Rating";
 import { UserDataContext } from "../../Context/UserDataContext";
-import { FavoritesContext } from "./../../../../../Rick-and-Morty/rickandmorty/src/context/FavoriteContext";
 
 
 function MovieDetails({ baseUrl, apiKey, serverUrl }) {
