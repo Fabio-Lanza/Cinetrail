@@ -1,7 +1,7 @@
 .slider-overlay {
   background: #000;
   background: linear-gradient(90deg, #000, hsla(0, 0%, 100%, 0));
-  height: 60%;
+  height: 70%;
   position: absolute;
   width: 100%;
 }
